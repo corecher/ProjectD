@@ -27,7 +27,10 @@ public class LoopAndDashEnemy : MonoBehaviour
     private Vector2 dashDirection;
     void Start()
     {
+        if(GameObject.FindGameObjectWithTag("Core") != null)
         core = GameObject.FindGameObjectWithTag("Core").GetComponent<Transform>();
+        else
+        core = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         myState = GetComponent<EnemyState>();
     }
 
@@ -94,6 +97,12 @@ public class LoopAndDashEnemy : MonoBehaviour
         if(collision.gameObject.CompareTag("Core"))
         {
             CoreState enemy = collision.gameObject.GetComponent<CoreState>();
+            enemy.GetDamage(myState.damage);
+            Destroy(gameObject);
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            PlayerMovement enemy = collision.gameObject.GetComponent<PlayerMovement>();
             enemy.GetDamage(myState.damage);
             Destroy(gameObject);
         }

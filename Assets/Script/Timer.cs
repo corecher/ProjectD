@@ -12,8 +12,8 @@ public class Timer : MonoBehaviour
         gameTime -= Time.deltaTime;    
         timer.text = "남은 시간 : "+(int)gameTime+"초";
         if(gameTime < 0f)
-        {
-            bossController.SpawnBoss();
+        {   
+            if(bossController!=null) bossController.SpawnBoss();
             Destroy(this);
         }
     }

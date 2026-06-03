@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
-
     private Rigidbody2D rb;
     private float horizontalInput;
     private bool isGrounded;
@@ -19,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private int maxJumpCount = 1;
     private Animator animator;
     public Collider2D collider;
-
+    public int hp;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,7 +70,11 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, -45f);
         }
     }
-
+    public void GetDamage(int damage)
+    {
+        hp -= damage;
+        
+    }
     private void FlipCharacter()
     {
         if (horizontalInput > 0)
