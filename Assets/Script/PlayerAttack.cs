@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange = 0.5f; // 공격 반지름 범위
     public LayerMask enemyLayers;   // 공격할 적들의 레이어
     public LayerMask enemyWeakPoint;
+    public LayerMask enemyCore;
     public int attackDamage = 20;    // 공격력
 
     [Header("공격 입력")]
@@ -34,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
         animator.SetTrigger("Attack");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] bossWeakPoint = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyWeakPoint);
+        Collider2D[] hitEnemyCore = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyCore);
         foreach (Collider2D enemy in hitEnemies)
         {
             EnemyState enemys  = enemy.gameObject.GetComponent<EnemyState>();
@@ -50,6 +52,14 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(HitStop(0.05f));
             weaks.TakeDamage();
             playerMovement.jumpCount--;
+            SoundManager.Instance.PlaySFX("Attack",1f);
+        }
+        foreach (Collider2D enemy in hitEnemyCore)
+        {
+            EnemySpawner weaks = enemy.gameObject.GetComponent<EnemySpawner>();
+            if(weaks.isStealthed) return;
+            StartCoroutine(HitStop(0.01f));
+            weaks.GetDamage(attackDamage);
             SoundManager.Instance.PlaySFX("Attack",1f);
         }
     }
