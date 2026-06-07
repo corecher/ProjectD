@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,8 +9,7 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;       // 대사가 출력될 레거시 Text 컴포넌트
 
     [Header("대사 데이터")]
-    [TextArea(3, 5)]
-    public string[] sentences;          // 출력할 대사들을 저장하는 배열
+    public List<DialogueData> sentences;          // 출력할 대사들을 저장하는 배열
 
     [Header("설정")]
     public float typingSpeed = 0.05f;   // 글자가 타이핑되는 속도
@@ -21,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;      // 현재 글자가 타이핑 중인지 여부
     private bool isEnding = false;      // 대사가 끝나고 씬 전환 중인지 체크
     private Coroutine typingCoroutine;  // 타이핑 코루틴 제어용
+    public int i;
     void Start()
     {
         if (fadeImage != null)
@@ -65,7 +66,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         // 모든 대사가 끝났다면
-        if (currentIndex >= sentences.Length)
+        if (currentIndex >= sentences[i].dialogue.Length)
         {
             EndDialogue();
             return;
@@ -78,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // 새 대사 타이핑 시작
-        typingCoroutine = StartCoroutine(TypeSentence(sentences[currentIndex]));
+        typingCoroutine = StartCoroutine(TypeSentence(sentences[i].dialogue[currentIndex]));
         currentIndex++;
     }
 
@@ -106,7 +107,7 @@ public class DialogueManager : MonoBehaviour
         }
         
         // 현재 인덱스가 이미 증가했으므로 -1 해줌
-        dialogueText.text = sentences[currentIndex - 1]; 
+        dialogueText.text = sentences[i].dialogue[currentIndex - 1]; 
         isTyping = false;
     }
 

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public Collider2D collider;
     public int hp;
+    public CoreManager coreManager;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,7 +75,10 @@ public class PlayerMovement : MonoBehaviour
     public void GetDamage(int damage)
     {
         hp -= damage;
-        
+        if( hp <= 0 )
+        {
+            coreManager.GameOver(false,1);
+        }
     }
     private void FlipCharacter()
     {

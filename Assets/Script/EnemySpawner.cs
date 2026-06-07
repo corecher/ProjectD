@@ -24,7 +24,8 @@ public class EnemySpawner : MonoBehaviour, IState
     public bool isStealthed = false;      // 현재 은신 여부 확인용 변수
     private Coroutine currentFadeCoroutine; // 현재 실행 중인 페이드 코루틴 저장용
     private Collider2D collider2D;
-
+    [SerializeField]private GameObject explosionEffect;
+    [SerializeField]private CoreManager coreManager;
     void Start()
     {
         GameObject cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
@@ -76,8 +77,10 @@ public class EnemySpawner : MonoBehaviour, IState
         if (isStealthed) return;
 
         hp -= damage;
+        Instantiate(explosionEffect,transform.position,Quaternion.identity);
         if (hp <= 0)
         {
+            coreManager.GameOver(true,1);
             Destroy(gameObject);
         }
         if(hp%400==0)

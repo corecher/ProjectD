@@ -14,7 +14,7 @@ public class EnemyState : MonoBehaviour,IState
         if(hp<=0)
         {
             Instantiate(explosionEffect,transform.position,Quaternion.identity);
-            if(gameObject.name == "BossEnemy") coreManager.GameOver(true);
+            if(gameObject.name == "BossEnemy") coreManager.GameOver(true,0);
             Destroy(gameObject);
         }
     }

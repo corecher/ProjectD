@@ -11,7 +11,7 @@ public class CoreState : MonoBehaviour,IState
         hp-=damage;
         if(hp<=0)
         {   
-            coreManager.GameOver(false);
+            coreManager.GameOver(false,0);
         }
     }
     void Update()
