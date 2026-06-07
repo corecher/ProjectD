@@ -84,12 +84,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(0.3f, 0.3f, 1);
             
         }
         else if (horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(-0.3f, 0.3f, 1);
         }
     }
     private void OnDrawGizmos()
