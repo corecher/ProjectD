@@ -74,10 +74,11 @@ public class PlayerMovement : MonoBehaviour
     }
     public void GetDamage(int damage)
     {
+        if(hp <= 0) return; 
         hp -= damage;
         if( hp <= 0 )
         {
-            coreManager.GameOver(false,1);
+            coreManager.GameOver(false,4);
         }
     }
     private void FlipCharacter()

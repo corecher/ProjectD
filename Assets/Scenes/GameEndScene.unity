@@ -580,11 +580,11 @@ MonoBehaviour:
       - m_Target: {fileID: 978044995}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ChangeNextScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 100
           m_FloatArgument: 0
           m_StringArgument: GameSceneDown
           m_BoolArgument: 0
@@ -833,7 +833,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1089822821}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ChangeNextScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1413,13 +1413,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1934418780}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: ChangeNextScene
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TitleScene
+          m_StringArgument: 0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1934418778

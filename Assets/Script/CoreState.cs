@@ -8,10 +8,11 @@ public class CoreState : MonoBehaviour,IState
     public Text hpText;
     public void GetDamage(int damage)
     {
+        if(hp <= 0) return;
         hp-=damage;
         if(hp<=0)
         {   
-            coreManager.GameOver(false,0);
+            coreManager.GameOver(false,4);
         }
     }
     void Update()

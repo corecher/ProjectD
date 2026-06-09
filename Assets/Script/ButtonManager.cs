@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public void ChangeNextScene(string nextScene)
+    public void ChangeNextScene(int i)
     {
-        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(nextScene));
+        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(i));
     } 
 }

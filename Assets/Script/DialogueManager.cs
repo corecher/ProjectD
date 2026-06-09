@@ -21,7 +21,8 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping = false;      // 현재 글자가 타이핑 중인지 여부
     private bool isEnding = false;      // 대사가 끝나고 씬 전환 중인지 체크
     private Coroutine typingCoroutine;  // 타이핑 코루틴 제어용
-    public int i;
+    private int i;
+    private int index;
     void Start()
     {
         if (fadeImage != null)
@@ -31,7 +32,7 @@ public class DialogueManager : MonoBehaviour
             fadeImage.color = color;
             fadeImage.gameObject.SetActive(false);
         }
-
+        index = GameObject.Find("FadeCanvas").GetComponent<FadeManager>().index;
         StartDialogue();
     }
 
@@ -116,7 +117,7 @@ public class DialogueManager : MonoBehaviour
     {
         isEnding = true;
         dialogueText.text = "";
-        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(nextSceneName));
+        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(index));
     }
     
 }
