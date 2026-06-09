@@ -11,6 +11,6 @@ public class CoreManager : MonoBehaviour
         if(index==0)
         StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene("GameEndScene"));
         else
-        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene("StoryScene"));
+        StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(null,index));
     }
 }

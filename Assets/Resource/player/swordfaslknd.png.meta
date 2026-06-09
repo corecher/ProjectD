@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 8a82d0809947d354e8b00809bf25b8ae
+guid: 046143ef72dbaa74baf9499bb3cb1089
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -658704650526586137
-    second: Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_0
+      213: 480771328952578833
+    second: swordfaslknd_0
   - first:
-      213: -3335670600674138654
-    second: Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_1
+      213: -3770406524339018969
+    second: swordfaslknd_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_0
+      name: swordfaslknd_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1024
-        height: 1024
+        width: 1254
+        height: 1254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7ea077d3c9fcbd6f0800000000000000
-      internalID: -658704650526586137
+      spriteID: 1133968f9fa0ca600800000000000000
+      internalID: 480771328952578833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_1
+      name: swordfaslknd_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 384
-        width: 47
-        height: 246
+        x: 33
+        y: 434
+        width: 109
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e5aa17034155b1d0800000000000000
-      internalID: -3335670600674138654
+      spriteID: 72325f91e33dcabc0800000000000000
+      internalID: -3770406524339018969
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_0: -658704650526586137
-      Gemini_Generated_Image_vyb08tvyb08tvyb0-Photoroom_1: -3335670600674138654
+      swordfaslknd_0: 480771328952578833
+      swordfaslknd_1: -3770406524339018969
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

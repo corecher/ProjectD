@@ -9,7 +9,8 @@ public class PlayerAttack : MonoBehaviour
     public LayerMask enemyWeakPoint;
     public LayerMask enemyCore;
     public int attackDamage = 20;    // 공격력
-
+    public GameObject attackEffectPrefab;
+    public Transform attackEffectPoint;
     [Header("공격 입력")]
     public KeyCode attackKey = KeyCode.Z;
     private Animator animator;
@@ -33,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("Attack");
+        GameObject effect = Instantiate(attackEffectPrefab, attackEffectPoint.position, attackPoint.rotation);
+        Destroy(effect, 0.1f);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         Collider2D[] bossWeakPoint = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyWeakPoint);
         Collider2D[] hitEnemyCore = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyCore);

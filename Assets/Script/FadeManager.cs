@@ -2,14 +2,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 public class FadeManager : MonoBehaviour
 {
     public static FadeManager Instance;
     [Header("UI 요소")]
     public Image fadeImage;      // 화면을 덮을 검은색 이미지
     public float fadeDuration = 1.0f;
-
-   private void Awake()
+    public List<string> nextSceneNames;
+    private void Awake()
     {
         if (Instance == null)
         {
@@ -71,8 +72,9 @@ public class FadeManager : MonoBehaviour
         // 투명해진 후 뒤에 있는 게임 버튼 등을 누를 수 있게 반드시 비활성화
         fadeImage.gameObject.SetActive(false);
     }
-    public IEnumerator FadeOutAndLoadScene(string nextSceneName)
-    {
+    public IEnumerator FadeOutAndLoadScene(string nextSceneName = null,int i=0)
+    { 
+        if (nextSceneName == null) nextSceneName = nextSceneNames[i];
         if (fadeImage == null)
         {
             Debug.LogError("Fade Image가 연결되지 않았습니다! 바로 씬을 전환합니다.");

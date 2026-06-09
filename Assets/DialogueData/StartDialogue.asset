@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: StartDialogue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   dialogue:
-  - sdfafaf
+  - "\uC720\uB9AC\uBCD1\uC5D0 \uBC31\uD569\uC744 \uB123\uC5C8\uC5B4"
+  - "\uC774\uC81C \uC774 \uAF43\uC774 \uD65C\uC9DD \uD544 \uC2DC\uAC04"
+  - "\uB2E8 100\uCD08\uB9CC \uBC84\uD2F0\uBA74 \uB3FC"

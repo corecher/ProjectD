@@ -502,6 +502,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1589195628}
   fadeDuration: 3
+  nextSceneNames:
+  - StoryScene
 --- !u!114 &596692108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,7 +1744,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Made \uC124\uC6B0\uC9C4 , \uC774\uC2B9\uC8FC"
+  m_Text: "Made \uC124\uC6B0\uC9C4"
 --- !u!222 &1848175419
 CanvasRenderer:
   m_ObjectHideFlags: 0
