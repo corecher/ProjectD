@@ -10,7 +10,7 @@ public class LoopAndDashEnemy : MonoBehaviour
     public float moveUpSpeed = 8f;   
     public float loopRadius = 0.8f;
     public float loopSpeed = 15f;
-
+    public float distanceCore = 20f;
     [Header("돌진 설정")]
     public float dashSpeed = 20f;
     public float dashDuration = 3f;
@@ -27,9 +27,9 @@ public class LoopAndDashEnemy : MonoBehaviour
     private Vector2 dashDirection;
     void Start()
     {
-        if(GameObject.FindGameObjectWithTag("Core") != null)
+        if(GameObject.FindGameObjectWithTag("Core") != null&&gameObject.name!="BossEnemy2")
         core = GameObject.FindGameObjectWithTag("Core").GetComponent<Transform>();
-        else
+        else if(gameObject.name!="BossEnemy2")
         core = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         myState = GetComponent<EnemyState>();
     }
@@ -58,7 +58,7 @@ public class LoopAndDashEnemy : MonoBehaviour
         Vector2 targetPos = (Vector2)core.position + new Vector2(0, hoverHeight);
         transform.position = Vector2.MoveTowards(transform.position, targetPos, moveUpSpeed * Time.deltaTime);
 
-        if (Vector2.Distance(transform.position, targetPos) < 20f)
+        if (Vector2.Distance(transform.position, targetPos) < distanceCore)
         {
             currentPhase = AttackPhase.Looping;
             stateTimer = 0f;
@@ -98,6 +98,7 @@ public class LoopAndDashEnemy : MonoBehaviour
         {
             CoreState enemy = collision.gameObject.GetComponent<CoreState>();
             enemy.GetDamage(myState.damage);
+            if(gameObject.name != "BossEnemy2")
             Destroy(gameObject);
         }
         if(collision.gameObject.CompareTag("Player"))

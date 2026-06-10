@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
     public Text timer;
     public CoreManager coreManager;
     public BossController bossController;
+    public LoopAndDashEnemy loopAndDashEnemy;
     void Update()
     {
         gameTime -= Time.deltaTime;    
@@ -14,6 +15,7 @@ public class Timer : MonoBehaviour
         if(gameTime < 0f)
         {   
             if(bossController!=null) bossController.SpawnBoss();
+            if(loopAndDashEnemy!=null) loopAndDashEnemy.core = GameObject.FindGameObjectWithTag("Core").GetComponent<Transform>();
             Destroy(this);
         }
     }

@@ -82,9 +82,8 @@ public class FadeManager : MonoBehaviour
         if(success == 0) 
         {
             floor++;
-            if(floor>=nextSceneNames.Count)
+            if(floor>=nextSceneNames.Count-1)
             floor--;
-            Debug.Log(floor);
         }
         else if (success == 1)
         {
@@ -94,7 +93,6 @@ public class FadeManager : MonoBehaviour
         Debug.Log(index);
         if(i==100) nextSceneName = nextSceneNames[floor];
         else nextSceneName = nextSceneNames[i];
-        index = i+1;
         
         if (fadeImage == null)
         {

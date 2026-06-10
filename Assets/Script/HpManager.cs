@@ -7,11 +7,14 @@ public class HpManager : MonoBehaviour
     public TextMesh playerHp;
     public PlayerMovement playerMovement;
     public EnemySpawner enemySpawner;
+    public CoreState coreState;
     void Update()
     {
         if(playerMovement != null)
         playerHp.text = playerMovement.hp+"/100";
         if(enemySpawner != null)
         hp.text = enemySpawner.hp+"/2000";
+        if(coreState != null)
+        playerHp.text = coreState.hp + "/100";
     }
 }

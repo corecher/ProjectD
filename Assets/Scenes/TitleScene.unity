@@ -507,7 +507,10 @@ MonoBehaviour:
   - StoryScene
   - GameScene
   - GameSceneDown
+  - GameSceneDown2
   - GameEndScene
+  index: 0
+  floor: 2
 --- !u!114 &596692108
 MonoBehaviour:
   m_ObjectHideFlags: 0
