@@ -112,7 +112,7 @@ MonoBehaviour:
   moveUpSpeed: 8
   loopRadius: 5
   loopSpeed: 2
-  distanceCore: 5
+  distanceCore: 10
   dashSpeed: 20
   dashDuration: 3
   myState: {fileID: 0}

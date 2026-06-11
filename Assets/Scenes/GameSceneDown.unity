@@ -215,6 +215,7 @@ MonoBehaviour:
   playerHp: {fileID: 0}
   playerMovement: {fileID: 0}
   enemySpawner: {fileID: 1765452697}
+  coreState: {fileID: 0}
 --- !u!1 &95948611
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +816,7 @@ MonoBehaviour:
   playerHp: {fileID: 817559735}
   playerMovement: {fileID: 1822598481}
   enemySpawner: {fileID: 0}
+  coreState: {fileID: 0}
 --- !u!114 &817559738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1746,7 +1748,7 @@ MonoBehaviour:
     m_Bits: 8
   jumpCount: 0
   collider: {fileID: 0}
-  hp: 100
+  hp: 20
   coreManager: {fileID: 1087528757}
 --- !u!50 &1822598482
 Rigidbody2D:
@@ -1895,7 +1897,7 @@ MonoBehaviour:
     rid: 1860750233688080455
   m_ShadowCastingSource: 2
   m_ShadowMesh:
-    m_Mesh: {fileID: 2038232773}
+    m_Mesh: {fileID: 1975825516}
     m_LocalBounds:
       m_Center: {x: 0.4900055, y: -0.6399994, z: 0}
       m_Extent: {x: 3.5099945, y: 3.899994, z: 0}
@@ -1915,6 +1917,51 @@ MonoBehaviour:
     - rid: 1860750233688080455
       type: {class: ShadowShape2DProvider_SpriteRenderer, ns: UnityEngine.Rendering.Universal, asm: Unity.RenderPipelines.Universal.2D.Runtime}
       data: 
+--- !u!1 &1887119586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1887119588}
+  - component: {fileID: 1887119587}
+  m_Layer: 0
+  m_Name: StartSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1887119587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887119586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b68f2c4c531c84c882b7aab1b453fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartSound
+  musicName: Wind
+--- !u!4 &1887119588
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887119586}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902742389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,7 +2346,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!43 &2038232773
+--- !u!43 &1975825516
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2579,3 +2626,4 @@ SceneRoots:
   - {fileID: 1902742391}
   - {fileID: 1957057572}
   - {fileID: 1765452694}
+  - {fileID: 1887119588}

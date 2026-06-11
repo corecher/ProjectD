@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using System.Linq;
 public class FadeManager : MonoBehaviour
 {
     public static FadeManager Instance;
@@ -14,6 +12,7 @@ public class FadeManager : MonoBehaviour
     public List<string> nextSceneNames;
     public int index;
     public int floor = 2;
+    [SerializeField]private GameObject EscPanel;
     private void Awake()
     {
         if (Instance == null)
@@ -39,7 +38,21 @@ public class FadeManager : MonoBehaviour
     {
         StartCoroutine(SceneLoadedRoutine(scene));
     }
-
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        ESC();
+    }
+    public void ESC()
+    {
+        Time.timeScale = EscPanel.activeSelf?1f:0f;
+        EscPanel.SetActive(!EscPanel.activeSelf);
+    }
+    public void ContinueGame()
+    {
+        EscPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
     private IEnumerator SceneLoadedRoutine(Scene scene)
     {
         yield return null;
@@ -48,6 +61,10 @@ public class FadeManager : MonoBehaviour
             fadeImage.color = Color.black;
         }
         yield return StartCoroutine(FadeIn());
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
     public IEnumerator FadeIn()
     {

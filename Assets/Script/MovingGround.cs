@@ -10,7 +10,6 @@ public class MovingGround : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
-        SoundManager.Instance.PlayBGM("Biguk");
     }
 
     void Update()

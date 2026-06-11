@@ -37,14 +37,14 @@ public class PlayerMovement : MonoBehaviour
             jumpCount = 0;
             collider.offset = new Vector2(0,-1);
         }
-        if (Input.GetButtonDown("Jump")||Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (isGrounded || jumpCount < maxJumpCount)
             {
                 Jump();
             }
         }
-        if (Input.GetKeyDown(KeyCode.G)||Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             FastFall();
         }

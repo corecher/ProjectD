@@ -8,6 +8,7 @@ public class CoreManager : MonoBehaviour
         EndingManager.Instance.successEnding = success;
         if(success) FadeManager.Instance.fadeImage.color = Color.white;
         else FadeManager.Instance.fadeImage.color = Color.black;
+        SoundManager.Instance.StopBGM();
         StartCoroutine(FadeManager.Instance.FadeOutAndLoadScene(index,success?1:0));
     }
 }

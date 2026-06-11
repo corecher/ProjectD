@@ -16,7 +16,6 @@ public class DialogueManager : MonoBehaviour
 
     [Header("씬 전환 설정")]
     public Image fadeImage;             // 페이드 효과에 사용할 UI Image
-    public string nextSceneName;
     private int currentIndex = 0;       // 현재 대사 번호
     private bool isTyping = false;      // 현재 글자가 타이핑 중인지 여부
     private bool isEnding = false;      // 대사가 끝나고 씬 전환 중인지 체크
@@ -24,6 +23,7 @@ public class DialogueManager : MonoBehaviour
     private int i;
     void Start()
     {
+        i=FadeManager.Instance.floor-2;
         if (fadeImage != null)
         {
             Color color = fadeImage.color;

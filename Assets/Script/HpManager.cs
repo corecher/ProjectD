@@ -11,7 +11,7 @@ public class HpManager : MonoBehaviour
     void Update()
     {
         if(playerMovement != null)
-        playerHp.text = playerMovement.hp+"/100";
+        playerHp.text = playerMovement.hp+"/20";
         if(enemySpawner != null)
         hp.text = enemySpawner.hp+"/2000";
         if(coreState != null)

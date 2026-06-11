@@ -798,10 +798,9 @@ MonoBehaviour:
   dialogueText: {fileID: 238313157}
   sentences:
   - {fileID: 11400000, guid: 579a2074f597efc4cb49101c61d729cf, type: 2}
+  - {fileID: 11400000, guid: 5524b26e73d13bc478d82fba9429e46d, type: 2}
   typingSpeed: 0.05
   fadeImage: {fileID: 1956214685}
-  nextSceneName: GameScene
-  i: 0
 --- !u!4 &1098092122
 Transform:
   m_ObjectHideFlags: 0

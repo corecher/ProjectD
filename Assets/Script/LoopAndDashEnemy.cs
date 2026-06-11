@@ -98,6 +98,8 @@ public class LoopAndDashEnemy : MonoBehaviour
         {
             CoreState enemy = collision.gameObject.GetComponent<CoreState>();
             enemy.GetDamage(myState.damage);
+            SoundManager.Instance.PlaySFX("AttackEnemy",1f);
+            Instantiate(myState.explosionEffect,transform.position,Quaternion.identity);
             if(gameObject.name != "BossEnemy2")
             Destroy(gameObject);
         }
@@ -105,6 +107,8 @@ public class LoopAndDashEnemy : MonoBehaviour
         {
             PlayerMovement enemy = collision.gameObject.GetComponent<PlayerMovement>();
             enemy.GetDamage(myState.damage);
+            SoundManager.Instance.PlaySFX("AttackEnemy",1f);
+            Instantiate(myState.explosionEffect,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }
