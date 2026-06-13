@@ -26,8 +26,11 @@ public class EnemySpawner : MonoBehaviour, IState
     private Collider2D collider2D;
     [SerializeField]private GameObject explosionEffect;
     [SerializeField]private CoreManager coreManager;
+    [SerializeField]private GameObject flower;
     void Start()
     {
+        if(flower!=null)
+        flower.SetActive(false);
         GameObject cameraObj = GameObject.FindGameObjectWithTag("MainCamera");
         if (cameraObj != null)
         {
@@ -80,6 +83,7 @@ public class EnemySpawner : MonoBehaviour, IState
         Instantiate(explosionEffect,transform.position,Quaternion.identity);
         if (hp <= 0)
         {
+            flower.SetActive(true);
             coreManager.GameOver(true,1);
             Destroy(gameObject);
         }
