@@ -130,7 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   damage: 5
-  explosionEffect: {fileID: 1951168309255639085, guid: 87780f780fbe3ef48a1dfd259926fbc0, type: 3}
+  explosionEffect: {fileID: 1951168309255639085, guid: 152efa3902ca34c45b69bbb85e9dd7b4, type: 3}
+  myexplosionEffect: {fileID: 1951168309255639085, guid: 87780f780fbe3ef48a1dfd259926fbc0, type: 3}
   coreManager: {fileID: 0}
   bossSprite: {fileID: 0}
 --- !u!95 &3035120625054541252

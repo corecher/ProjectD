@@ -6,6 +6,7 @@ public class EnemyState : MonoBehaviour,IState
     public int hp=10;
     public int damage=10;
     public GameObject explosionEffect;
+    public GameObject myexplosionEffect;
     public CoreManager coreManager;
     public Sprite bossSprite;
     public void GetDamage(int damage)
@@ -13,7 +14,7 @@ public class EnemyState : MonoBehaviour,IState
         hp-=damage;
         if(hp<=0)
         {
-            Instantiate(explosionEffect,transform.position,Quaternion.identity);
+            Instantiate(myexplosionEffect,transform.position,Quaternion.identity);
             if(gameObject.name == "BossEnemy") 
             {
                 coreManager.GameOver(true,5);
